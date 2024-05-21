@@ -72,7 +72,7 @@
             this.nut.Text = "20";
             this.nut.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.nut.UseVisualStyleBackColor = false;
-            this.nut.Click += new System.EventHandler(this.nut_Click);
+            this.nut.MouseDown += new System.Windows.Forms.MouseEventHandler(this.nut_MouseDown);
             // 
             // sword_biggoron
             // 
@@ -188,7 +188,7 @@
             this.bombs.Text = "20";
             this.bombs.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.bombs.UseVisualStyleBackColor = false;
-            this.bombs.Click += new System.EventHandler(this.bombs_Click);
+            this.bombs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bombs_MouseDown);
             // 
             // main
             // 

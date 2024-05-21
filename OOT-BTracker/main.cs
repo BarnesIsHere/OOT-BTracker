@@ -23,15 +23,39 @@ namespace OOT_BTracker
 
         private void InitButtonStates()
         {
-            stick_value = 1;
-            nut_value = 1;
-            bombs_value = 1;
-            bow_value = 1;
-            arrow_fire_value = 1;
-            magic_din_value = 1;
-            sword_kokiri_value = 1;
-            sword_master_value = 1;
-            sword_biggoron_value = 1;
+            InitStates(stick_value = 0, stick);
+            InitStates(nut_value = 0, nut);
+            InitStates(bombs_value = 0, bombs);
+            InitStates(bow_value = 0, bow);
+            InitStates(arrow_fire_value = 0, arrow_fire);
+            InitStates(magic_din_value = 0, magic_din);
+            InitStates(sword_kokiri_value = 0, sword_kokiri);
+            InitStates(sword_master_value = 0, sword_master);
+            InitStates(sword_biggoron_value = 0, sword_biggoron);
+        }
+
+        private void InitStates(int value, Button button)
+        {
+            switch (value)
+            {
+                default:
+                    break;
+                case 0:
+                    button.Image = SetImageOpacity(button.Image, 0.5F);
+                    switch (button.Text)
+                    {
+                        default:
+                            button.Text = "";
+                            break;
+                        case "Din":
+                            button.ForeColor = Color.Gray;
+                            break;
+                        case "Fire":
+                            button.ForeColor = Color.Gray;
+                            break;
+                    }
+                    break;
+            }
         }
 
         /** Initialisiere Buttons */
@@ -94,80 +118,154 @@ namespace OOT_BTracker
 
         private void stick_MouseDown(object sender, MouseEventArgs e)
         {
+            Int32.TryParse(stick.Text, out int result);
             switch (e.Button)
             {
                 case MouseButtons.Left:
-                    switch (stick_value)
+                    switch (result)
                     {
+                        default:
+                            stick.Text = (result + 10).ToString();
+                            stick_value++;
+                            break;
                         case 0:
                             stick.Image = SetImageOpacity(stick.Image, 2F);
                             stick.Text = "10";
-                            stick_value = 1;
+                            stick_value++;
                             break;
-                        case 1:
-                            stick.Text = "20";
-                            stick_value = 2;
-                            break;
-                        case 2:
-                            stick.Text = "30";
+                        case 20:
                             stick.ForeColor = Color.GreenYellow;
-                            stick_value = 3;
+                            stick.Text = "30";
+                            stick_value++;
+                            break;
+                        case 30:
                             break;
                     }
                     break;
 
                 case MouseButtons.Right:
-                    switch (stick_value)
+                    switch (result)
                     {
-                        case 1:
+                        default:
+                            stick.Text = (result - 10).ToString();
+                            stick_value--;
+                            break;
+                        case 10:
                             stick.Image = SetImageOpacity(stick.Image, 0.5F);
                             stick.Text = "";
-                            stick_value = 0;
+                            stick_value--;
                             break;
-                        case 2:
-                            stick.Text = "10";
-                            stick_value = 1;
-                            break;
-                        case 3:
-                            stick.Text = "20";
+                        case 30:
                             stick.ForeColor = Color.White;
-                            stick_value = 2;
+                            stick.Text = (result - 10).ToString();
+                            stick_value--;
+                            break;
+                        case 0:
                             break;
                     }
                     break;
             }
         }
 
-        private void nut_Click(object sender, EventArgs e)
+        private void nut_MouseDown(object sender, MouseEventArgs e)
         {
-            switch (nut_value)
+            Int32.TryParse(nut.Text, out int result);
+            switch (e.Button)
             {
-                case 0:
-                    nut.Image = SetImageOpacity(nut.Image, 2F);
-                    nut.Text = "20";
-                    nut_value = 0;
+                case MouseButtons.Left:
+                    switch (result)
+                    {
+                        default:
+                            nut.Text = (result + 10).ToString();
+                            nut_value++;
+                            break;
+                        case 0:
+                            nut.Image = SetImageOpacity(nut.Image, 2F);
+                            nut.Text = "20";
+                            nut_value++;
+                            break;
+                        case 30:
+                            nut.ForeColor = Color.GreenYellow;
+                            nut.Text = "40";
+                            nut_value++;
+                            break;
+                        case 40:
+                            break;
+                    }
                     break;
-                case 1:
-                    nut.Image = SetImageOpacity(nut.Image, 0.5F);
-                    nut.Text = "";
-                    nut_value = 0;
+
+                case MouseButtons.Right:
+                    switch (result)
+                    {
+                        default:
+                            nut.Text = (result - 10).ToString();
+                            nut_value--;
+                            break;
+                        case 10:
+                            nut.Image = SetImageOpacity(nut.Image, 0.5F);
+                            nut.Text = "";
+                            nut_value--;
+                            break;
+                        case 40:
+                            nut.ForeColor = Color.White;
+                            nut.Text = (result - 10).ToString();
+                            nut_value--;
+                            break;
+                        case 0:
+                            break;
+                    }
                     break;
             }
         }
 
-        private void bombs_Click(object sender, EventArgs e)
+        private void bombs_MouseDown(object sender, MouseEventArgs e)
         {
-            switch (bombs_value)
+
+            Int32.TryParse(bombs.Text, out int result);
+            switch (e.Button)
             {
-                case 0:
-                    bombs.Image = SetImageOpacity(bombs.Image, 2F);
-                    bombs.Text = "20";
-                    bombs_value = 0;
+                case MouseButtons.Left:
+                    switch (result)
+                    {
+                        default:
+                            bombs.Text = (result + 10).ToString();
+                            bombs_value++;
+                            break;
+                        case 0:
+                            bombs.Image = SetImageOpacity(bombs.Image, 2F);
+                            bombs.Text = "20";
+                            bombs_value++;
+                            break;
+                        case 30:
+                            bombs.ForeColor = Color.GreenYellow;
+                            bombs.Text = "40";
+                            bombs_value++;
+                            break;
+                        case 40:
+                            break;
+                    }
                     break;
-                case 1:
-                    bombs.Image = SetImageOpacity(bombs.Image, 0.5F);
-                    bombs.Text = "";
-                    bombs_value = 0;
+
+                case MouseButtons.Right:
+                    switch (result)
+                    {
+                        default:
+                            bombs.Text = (result - 10).ToString();
+                            bombs_value--;
+                            break;
+                        case 10:
+                            bombs.Image = SetImageOpacity(bombs.Image, 0.5F);
+                            bombs.Text = "";
+                            bombs_value--;
+                            break;
+                        case 40:
+                            bombs.ForeColor = Color.White;
+                            bombs.Text = (result - 10).ToString();
+                            bombs_value--;
+                            break;
+                        case 0:
+                            break;
+                    }
                     break;
             }
         }
