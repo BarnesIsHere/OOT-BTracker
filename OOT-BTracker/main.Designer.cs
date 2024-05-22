@@ -88,7 +88,7 @@
             this.sword_biggoron.TabIndex = 2;
             this.sword_biggoron.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.sword_biggoron.UseVisualStyleBackColor = false;
-            this.sword_biggoron.Click += new System.EventHandler(this.sword_biggoron_Click);
+            this.sword_biggoron.MouseDown += new System.Windows.Forms.MouseEventHandler(this.sword_biggoron_MouseDown);
             // 
             // sword_master
             // 
@@ -104,7 +104,7 @@
             this.sword_master.TabIndex = 3;
             this.sword_master.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.sword_master.UseVisualStyleBackColor = false;
-            this.sword_master.Click += new System.EventHandler(this.sword_master_Click);
+            this.sword_master.MouseDown += new System.Windows.Forms.MouseEventHandler(this.sword_master_MouseDown);
             // 
             // sword_kokiri
             // 
@@ -120,7 +120,7 @@
             this.sword_kokiri.TabIndex = 4;
             this.sword_kokiri.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.sword_kokiri.UseVisualStyleBackColor = false;
-            this.sword_kokiri.Click += new System.EventHandler(this.sword_kokiri_Click);
+            this.sword_kokiri.MouseDown += new System.Windows.Forms.MouseEventHandler(this.sword_kokiri_MouseDown);
             // 
             // magic_din
             // 
@@ -137,7 +137,7 @@
             this.magic_din.Text = "Din";
             this.magic_din.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.magic_din.UseVisualStyleBackColor = false;
-            this.magic_din.Click += new System.EventHandler(this.magic_din_Click);
+            this.magic_din.MouseDown += new System.Windows.Forms.MouseEventHandler(this.magic_din_MouseDown);
             // 
             // arrow_fire
             // 
@@ -154,7 +154,7 @@
             this.arrow_fire.Text = "Fire";
             this.arrow_fire.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.arrow_fire.UseVisualStyleBackColor = false;
-            this.arrow_fire.Click += new System.EventHandler(this.arrow_fire_Click);
+            this.arrow_fire.MouseDown += new System.Windows.Forms.MouseEventHandler(this.arrow_fire_MouseDown);
             // 
             // bow
             // 
@@ -171,7 +171,7 @@
             this.bow.Text = "30";
             this.bow.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.bow.UseVisualStyleBackColor = false;
-            this.bow.Click += new System.EventHandler(this.bow_Click);
+            this.bow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bow_MouseDown);
             // 
             // bombs
             // 

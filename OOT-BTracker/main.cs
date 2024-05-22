@@ -134,7 +134,7 @@ namespace OOT_BTracker
                             stick_value++;
                             break;
                         case 20:
-                            stick.ForeColor = Color.GreenYellow;
+                            stick.ForeColor = Color.LimeGreen;
                             stick.Text = "30";
                             stick_value++;
                             break;
@@ -167,6 +167,171 @@ namespace OOT_BTracker
             }
         }
 
+        private void sword_master_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    if (sword_master_value != 1)
+                    {
+                        sword_master.Image = SetImageOpacity(sword_master.Image, 2F);
+                        sword_master_value = 1;
+                    }
+                    break;
+
+                case MouseButtons.Right:
+                    if (sword_master_value != 0)
+                    {
+                        sword_master.Image = SetImageOpacity(sword_master.Image, 0.5F);
+                        sword_master_value = 0;
+                    }
+                    break;
+            }
+        }
+
+        private void sword_biggoron_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    if (sword_biggoron_value != 1)
+                    {
+                        sword_biggoron.Image = SetImageOpacity(sword_biggoron.Image, 2F);
+                        sword_biggoron_value = 1;
+                    }
+                    break;
+
+                case MouseButtons.Right:
+                    if (sword_biggoron_value != 0)
+                    {
+                        sword_biggoron.Image = SetImageOpacity(sword_biggoron.Image, 0.5F);
+                        sword_biggoron_value = 0;
+                    }
+                    break;
+            }
+        }
+
+        private void sword_kokiri_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    if (sword_kokiri_value != 1)
+                    {
+                        sword_kokiri.Image = SetImageOpacity(sword_kokiri.Image, 2F);
+                        sword_kokiri_value = 1;
+                    }
+                    break;
+
+                case MouseButtons.Right:
+                    if (sword_kokiri_value != 0)
+                    {
+                        sword_kokiri.Image = SetImageOpacity(sword_kokiri.Image, 0.5F);
+                        sword_kokiri_value = 0;
+                    }
+                    break;
+            }
+        }
+
+        private void magic_din_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    if (magic_din_value != 1)
+                    {
+                        magic_din.Image = SetImageOpacity(magic_din.Image, 2F);
+                        magic_din.ForeColor = Color.White;
+                        magic_din_value = 1;
+                    }
+                    break;
+
+                case MouseButtons.Right:
+                    if (magic_din_value != 0)
+                    {
+                        magic_din.Image = SetImageOpacity(magic_din.Image, 0.5F);
+                        magic_din.ForeColor = Color.Gray;
+                        magic_din_value = 0;
+                    }
+                    break;
+            }
+        }
+
+        private void arrow_fire_MouseDown(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    if (arrow_fire_value != 1)
+                    {
+                        arrow_fire.Image = SetImageOpacity(arrow_fire.Image, 2F);
+                        arrow_fire.ForeColor = Color.White;
+                        arrow_fire_value = 1;
+                    }
+                    break;
+
+                case MouseButtons.Right:
+                    if (arrow_fire_value != 0)
+                    {
+                        arrow_fire.Image = SetImageOpacity(arrow_fire.Image, 0.5F);
+                        arrow_fire.ForeColor = Color.Gray;
+                        arrow_fire_value = 0;
+                    }
+                    break;
+            }
+        }
+
+        private void bow_MouseDown(object sender, MouseEventArgs e)
+        {
+            Int32.TryParse(bow.Text, out int result);
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    switch (result)
+                    {
+                        default:
+                            bow.Text = (result + 10).ToString();
+                            bow_value++;
+                            break;
+                        case 0:
+                            bow.Image = SetImageOpacity(bow.Image, 2F);
+                            bow.Text = "30";
+                            bow_value++;
+                            break;
+                        case 40:
+                            bow.ForeColor = Color.LimeGreen;
+                            bow.Text = "50";
+                            bow_value++;
+                            break;
+                        case 50:
+                            break;
+                    }
+                    break;
+
+                case MouseButtons.Right:
+                    switch (result)
+                    {
+                        default:
+                            bow.Text = (result - 10).ToString();
+                            bow_value--;
+                            break;
+                        case 30:
+                            bow.Image = SetImageOpacity(bow.Image, 0.5F);
+                            bow.Text = "";
+                            bow_value--;
+                            break;
+                        case 50:
+                            bow.ForeColor = Color.White;
+                            bow.Text = (result - 10).ToString();
+                            bow_value--;
+                            break;
+                        case 0:
+                            break;
+                    }
+                    break;
+            }
+        }
+
         private void nut_MouseDown(object sender, MouseEventArgs e)
         {
             Int32.TryParse(nut.Text, out int result);
@@ -185,7 +350,7 @@ namespace OOT_BTracker
                             nut_value++;
                             break;
                         case 30:
-                            nut.ForeColor = Color.GreenYellow;
+                            nut.ForeColor = Color.LimeGreen;
                             nut.Text = "40";
                             nut_value++;
                             break;
@@ -237,7 +402,7 @@ namespace OOT_BTracker
                             bombs_value++;
                             break;
                         case 30:
-                            bombs.ForeColor = Color.GreenYellow;
+                            bombs.ForeColor = Color.LimeGreen;
                             bombs.Text = "40";
                             bombs_value++;
                             break;
@@ -270,100 +435,14 @@ namespace OOT_BTracker
             }
         }
 
-        private void bow_Click(object sender, EventArgs e)
-        {
-            switch (bow_value)
-            {
-                case 0:
-                    bow.Image = SetImageOpacity(bow.Image, 2F);
-                    bow.Text = "30";
-                    bow_value = 1;
-                    break;
-                case 1:
-                    bow.Image = SetImageOpacity(bow.Image, 0.5F);
-                    bow.Text = "";
-                    bow_value = 0;
-                    break;
-            }
-        }
-
-        private void arrow_fire_Click(object sender, EventArgs e)
-        {
-            switch (arrow_fire_value)
-            {
-                case 0:
-                    arrow_fire.Image = SetImageOpacity(arrow_fire.Image, 2F);
-                    arrow_fire.ForeColor = Color.White;
-                    arrow_fire_value = 1;
-                    break;
-                case 1:
-                    arrow_fire.Image = SetImageOpacity(arrow_fire.Image, 0.5F);
-                    arrow_fire.ForeColor = Color.Gray;
-                    arrow_fire_value = 0;
-                    break;
-            }
-        }
-
-        private void magic_din_Click(object sender, EventArgs e)
-        {
-            switch (magic_din_value)
-            {
-                case 0:
-                    magic_din.Image = SetImageOpacity(magic_din.Image, 2F);
-                    magic_din.ForeColor = Color.White;
-                    magic_din_value = 1;
-                    break;
-                case 1:
-                    magic_din.Image = SetImageOpacity(magic_din.Image, 0.5F);
-                    magic_din.ForeColor = Color.Gray;
-                    magic_din_value = 0;
-                    break;
-            }
-        }
-
-        private void sword_kokiri_Click(object sender, EventArgs e)
-        {
-            switch (sword_kokiri_value)
-            {
-                case 0:
-                    sword_kokiri.Image = SetImageOpacity(sword_kokiri.Image, 2F);
-                    sword_kokiri_value = 1;
-                    break;
-                case 1:
-                    sword_kokiri.Image = SetImageOpacity(sword_kokiri.Image, 0.5F);
-                    sword_kokiri_value = 0;
-                    break;
-            }
-        }
-
         private void sword_master_Click(object sender, EventArgs e)
         {
-            switch (sword_master_value)
-            {
-                case 0:
-                    sword_master.Image = SetImageOpacity(sword_master.Image, 2F);
-                    sword_master_value = 1;
-                    break;
-                case 1:
-                    sword_master.Image = SetImageOpacity(sword_master.Image, 0.5F);
-                    sword_master_value = 0;
-                    break;
-            }
+
         }
 
         private void sword_biggoron_Click(object sender, EventArgs e)
         {
-            switch (sword_biggoron_value)
-            {
-                case 0:
-                    sword_biggoron.Image = SetImageOpacity(sword_biggoron.Image, 2F);
-                    sword_biggoron_value = 1;
-                    break;
-                case 1:
-                    sword_biggoron.Image = SetImageOpacity(sword_biggoron.Image, 0.5F);
-                    sword_biggoron_value = 0;
-                    break;
-            }
+
         }
     }
 }
