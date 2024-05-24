@@ -15,9 +15,10 @@ using System.Windows.Input;
 
 namespace OOT_BTracker
 {
-    internal class ItemTracker
+    public class ItemTracker
     {
         main parent;
+        KeySanity keySanity;
         private List<ArrayList> items;
         private int zeile = 9;
         private int zeilec = 0, spaltec = 0;
@@ -28,10 +29,24 @@ namespace OOT_BTracker
         {
             parent = sender;
             Init_Items();
+            Original_Size();
+        }
+
+        public void Set_KeySanity(KeySanity k)
+        {
+            this.keySanity = k;
+        }
+
+
+        public void Original_Size()
+        {
+            parent.Size = new Size(470, 480);
+            parent.MinimumSize = new Size(470, 480);
+            parent.MaximumSize = new Size(470, 480);
         }
 
         // Erstelle alle Items die für den Tracker benötigt werden
-        public void Init_Items()
+        private void Init_Items()
         {
             items = new List<ArrayList>();
 
@@ -170,7 +185,7 @@ namespace OOT_BTracker
             tracktype.Add(3);
             itemtext.Add("");
             itemmin.Add(0);
-            itemmax.Add(0);
+            itemmax.Add(2);
             itempicturesinside = new List<string>();
             itempicturesinside.Add("ocarina_saria");
             itempicturesinside.Add("ocarina_time");
@@ -904,7 +919,6 @@ namespace OOT_BTracker
 
         private void Init_buttons()
         {
-            parent.Controls.Clear();
             for (int i = 0; i < items.Count(); i++)
             {
 
@@ -926,10 +940,9 @@ namespace OOT_BTracker
                 {
                     tbut.Image = SetImageOpacity(tbut.Image, 0.2F);
                 }
-                parent.Size = new Size(470, 450);
                 tbut.Tag = i;
                 tbut.Size = new Size(48, 48);
-                tbut.Location = new Point(12 + (zeilec * 48), 12 + (spaltec * 48));
+                tbut.Location = new Point(10 + (zeilec * 48), 30 + (spaltec * 48));
                 tbut.FlatStyle = FlatStyle.Flat;
                 tbut.FlatAppearance.BorderSize = 0;
                 tbut.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -948,6 +961,7 @@ namespace OOT_BTracker
                 }
                 tbut.MouseDown += new MouseEventHandler(tbuttons);
                 parent.Controls.Add(tbut);
+                items[i].Add(tbut);
                 zeilec++;
                 if (zeilec == zeile)
                 {
@@ -1012,6 +1026,10 @@ namespace OOT_BTracker
                                     {
                                         button.Image = SetImageOpacity(button.Image, 0.2F);
                                         itemstatus--;
+                                        if(itemnames == "membership" & keySanity != null)
+                                        {
+                                            keySanity.Set_GF(false);
+                                        }
                                     }
                                 }
                                 break;
@@ -1042,29 +1060,24 @@ namespace OOT_BTracker
                                 }
                                 break;
                             case 2:
-                                switch (itemstatus)
+                                if (itemstatus == itemmax)
                                 {
-                                    default:
-                                        if (itemstatus == itemmax)
-                                        {
-                                            button.ForeColor = Color.White;
-                                            itemstatus -= 10;
-                                            button.Text = itemstatus.ToString();
-                                        }
-                                        else
-                                        {
-                                            if (itemstatus != 0)
-                                            {
-                                                itemstatus -= 10;
-                                                button.Text = itemstatus.ToString();
-                                            }
-                                        }
-                                        break;
-                                    case 10:
-                                        itemstatus -= 10;
-                                        button.Text = "";
-                                        if (!itemuncheck) button.Image = SetImageOpacity(button.Image, 0.2F);
-                                        break;
+                                    button.ForeColor = Color.White;
+                                    itemstatus -= 10;
+                                    button.Text = itemstatus.ToString();
+                                }
+                                else
+                                if(itemstatus == itemmin)
+                                {
+                                    itemstatus = 0;
+                                    button.Text = "";
+                                    button.Image = SetImageOpacity(button.Image, 0.2F);
+                                }
+                                else
+                                if (itemstatus != 0)
+                                {
+                                    itemstatus -= 10;
+                                    button.Text = itemstatus.ToString();
                                 }
                                 break;
                             case 3:
@@ -1072,7 +1085,7 @@ namespace OOT_BTracker
                                 {
                                     case 1:
                                         if (!itemuncheck) button.Image = SetImageOpacity(button.Image, 0.2F);
-                                        button.Text = "";
+                                        button.Text = itemtext;
                                         itemstatus--;
                                         break;
                                     default:
@@ -1123,6 +1136,10 @@ namespace OOT_BTracker
                                 {
                                     button.Image = SetImageOpacity(button.Image, 10F);
                                     itemstatus++;
+                                    if (itemnames == "membership" & keySanity != null)
+                                    {
+                                        keySanity.Set_GF(true);
+                                    }
                                 }
                                 break;
                             case 1:
@@ -1139,7 +1156,7 @@ namespace OOT_BTracker
                                         {
                                             itemstatus++;
                                             button.Text = itemstatus.ToString();
-                                            if (itemstatus == Convert.ToInt32(items[pos][6])) button.ForeColor = Color.LawnGreen; 
+                                            if (itemstatus == Convert.ToInt32(items[pos][6])) button.ForeColor = Color.FromArgb(54, 255, 54); 
                                         }
                                         break;
                                 }
@@ -1158,7 +1175,7 @@ namespace OOT_BTracker
                                         {
                                             itemstatus +=10;
                                             button.Text = itemstatus.ToString();
-                                            if (itemstatus == Convert.ToInt32(items[pos][6])) button.ForeColor = Color.LawnGreen;
+                                            if (itemstatus == Convert.ToInt32(items[pos][6])) button.ForeColor = Color.FromArgb(54, 255, 54);
                                         }
                                         break;
                                 }
@@ -1221,10 +1238,11 @@ namespace OOT_BTracker
                     break;
                 case "wallet_gold":
                     button.Text = "500";
+                    button.ForeColor = Color.FromArgb(54, 255, 54);
                     break;
                 case "wallet_tycoon":
                     button.Text = "999";
-                    button.ForeColor = Color.LawnGreen;
+                    button.ForeColor = Color.FromArgb(54, 255, 54);
                     break;
                 case "scale_silver":
                     button.Text = "S";
@@ -1302,6 +1320,46 @@ namespace OOT_BTracker
                     button.Text = "???";
                 }
             }
+        }
+
+        public void Set_GF(Boolean active)
+        {
+            for(int i = 0; i < items.Count; i++)
+            {
+                string itemnames = items[i][0].ToString();
+                int itemstatus = Convert.ToInt32(items[i][1]);
+                Button button = (Button)items[i][8];
+                if(itemnames == "membership")
+                {
+                    if(active)
+                    {
+                        items[i][1] = 1;
+                        button.Image = SetImageOpacity(button.Image, 10F);
+                    }
+                    else
+                    {
+                        items[i][1] = 0;
+                        button.Image = SetImageOpacity(button.Image, 0.2F);
+                    }
+                }
+            }
+        }
+
+        public Boolean Get_GF()
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                string itemnames = items[i][0].ToString();
+                int itemstatus = Convert.ToInt32(items[i][1]);
+                if (itemnames == "membership")
+                {
+                    if(itemstatus == 0)
+                        return false;
+                    if (itemstatus == 1)
+                        return true;
+                }
+            }
+            return false;
         }
     }
 }
