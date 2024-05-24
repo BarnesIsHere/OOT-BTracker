@@ -29,18 +29,12 @@ namespace OOT_BTracker
         private void Init_Items()
         {
             // DrawLine(parent.Height, 0, parent.Height+5, parent.Width);
-            parent.Size = new Size(parent.Width, parent.Height + 125);
-            parent.MinimumSize = new Size(parent.Width, parent.Height + 125);
+            parent.Size = new Size(parent.Width, parent.Height + 130);
+            parent.MinimumSize = new Size(parent.Width, parent.Height + 130);
             parent.MaximumSize = new Size(parent.Width, parent.Height);
 
 
             Init_Keys_Dungeons();
-        }
-        public void DrawLine(PaintEventArgs e)
-        {
-                Graphics g = e.Graphics;
-                Pen whitepen = new Pen(Color.FromArgb(203,156,61), 5);
-                g.DrawLine(whitepen, 0, height , 480, height);
         }
 
         private void Init_Text_Dungeons()
@@ -56,6 +50,15 @@ namespace OOT_BTracker
                     dungeoncolor
                     );
             }
+        }
+        public void DrawLine(PaintEventArgs e)
+        {
+
+            Graphics g = e.Graphics;
+            Pen whitepen = new Pen(Color.FromArgb(203, 156, 61), 5);
+            //g.DrawLine(whitepen, 0, height, 480, height);
+            g.DrawLine(whitepen, 0, 444, 455, 444);
+
         }
 
         private void Init_Keys_Dungeons()
@@ -370,6 +373,11 @@ namespace OOT_BTracker
                     }
                 }
             }
+        }
+
+        public void KeySanity_Terminate()
+        {
+            keys.Clear();
         }
     }
 }

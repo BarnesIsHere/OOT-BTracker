@@ -353,6 +353,16 @@ namespace OOT_BTracker.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hyrule {
+            get {
+                object obj = ResourceManager.GetObject("hyrule", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ice_trap {
             get {
                 object obj = ResourceManager.GetObject("ice_trap", resourceCulture);

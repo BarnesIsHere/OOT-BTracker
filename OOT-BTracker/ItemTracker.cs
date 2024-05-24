@@ -20,8 +20,6 @@ namespace OOT_BTracker
         main parent;
         KeySanity keySanity;
         private List<ArrayList> items;
-        private int zeile = 9;
-        private int zeilec = 0, spaltec = 0;
         private int[] dungeon_state = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         private string[] dungeon_name = { "FREE", "DEKU", "DCVN", "JABU", "FRST", "FIRE", "WATR", "SHDW", "SPRT"};
 
@@ -917,8 +915,10 @@ namespace OOT_BTracker
             return itemlist;
         }
 
-        private void Init_buttons()
+        public void Init_buttons()
         {
+            int zeile = 9;
+            int zeilec = 0, spaltec = 0;
             for (int i = 0; i < items.Count(); i++)
             {
 
@@ -942,7 +942,7 @@ namespace OOT_BTracker
                 }
                 tbut.Tag = i;
                 tbut.Size = new Size(48, 48);
-                tbut.Location = new Point(10 + (zeilec * 48), 30 + (spaltec * 48));
+                tbut.Location = new Point(10 + (zeilec * 48), 40 + (spaltec * 48));
                 tbut.FlatStyle = FlatStyle.Flat;
                 tbut.FlatAppearance.BorderSize = 0;
                 tbut.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -1041,7 +1041,9 @@ namespace OOT_BTracker
                                         {
                                             button.ForeColor = Color.White;
                                             itemstatus--;
+                                            
                                             button.Text = itemstatus.ToString();
+                                            items[pos][4] = button.Text;
                                         }
                                         else
                                         {
@@ -1049,13 +1051,15 @@ namespace OOT_BTracker
                                             {
                                                 itemstatus--;
                                                 button.Text = itemstatus.ToString();
+                                                items[pos][4] = button.Text;
                                             }
                                         }
                                         break;
                                     case 1:
                                         itemstatus--;
                                         button.Text = "";
-                                        if(!itemuncheck) button.Image = SetImageOpacity(button.Image, 0.2F);
+                                        items[pos][4] = button.Text;
+                                        if (!itemuncheck) button.Image = SetImageOpacity(button.Image, 0.2F);
                                         break;
                                 }
                                 break;
@@ -1065,12 +1069,14 @@ namespace OOT_BTracker
                                     button.ForeColor = Color.White;
                                     itemstatus -= 10;
                                     button.Text = itemstatus.ToString();
+                                    items[pos][4] = button.Text;
                                 }
                                 else
                                 if(itemstatus == itemmin)
                                 {
                                     itemstatus = 0;
                                     button.Text = "";
+                                    items[pos][4] = button.Text;
                                     button.Image = SetImageOpacity(button.Image, 0.2F);
                                 }
                                 else
@@ -1078,6 +1084,7 @@ namespace OOT_BTracker
                                 {
                                     itemstatus -= 10;
                                     button.Text = itemstatus.ToString();
+                                    items[pos][4] = button.Text;
                                 }
                                 break;
                             case 3:
@@ -1086,6 +1093,7 @@ namespace OOT_BTracker
                                     case 1:
                                         if (!itemuncheck) button.Image = SetImageOpacity(button.Image, 0.2F);
                                         button.Text = itemtext;
+                                        items[pos][4] = button.Text;
                                         itemstatus--;
                                         break;
                                     default:
@@ -1149,6 +1157,7 @@ namespace OOT_BTracker
                                         button.Image = SetImageOpacity(button.Image, 10F);
                                         itemstatus++;
                                         button.Text = itemstatus.ToString();
+                                        items[pos][4] = button.Text;
                                         button.TextAlign = ContentAlignment.BottomRight;
                                         break;
                                     default:
@@ -1156,6 +1165,7 @@ namespace OOT_BTracker
                                         {
                                             itemstatus++;
                                             button.Text = itemstatus.ToString();
+                                            items[pos][4] = button.Text;
                                             if (itemstatus == Convert.ToInt32(items[pos][6])) button.ForeColor = Color.FromArgb(54, 255, 54); 
                                         }
                                         break;
@@ -1168,6 +1178,7 @@ namespace OOT_BTracker
                                         button.Image = SetImageOpacity(button.Image, 10F);
                                         itemstatus += itemmin;
                                         button.Text = itemstatus.ToString();
+                                        items[pos][4] = button.Text;
                                         button.TextAlign = ContentAlignment.BottomRight;
                                         break;
                                     default:
@@ -1175,6 +1186,7 @@ namespace OOT_BTracker
                                         {
                                             itemstatus +=10;
                                             button.Text = itemstatus.ToString();
+                                            items[pos][4] = button.Text;
                                             if (itemstatus == Convert.ToInt32(items[pos][6])) button.ForeColor = Color.FromArgb(54, 255, 54);
                                         }
                                         break;

@@ -17,6 +17,7 @@ namespace OOT_BTracker
     {
         ItemTracker itemt;
         KeySanity keysa;
+        MapTracker mapt;
         public main()
         {
             InitializeComponent();
@@ -39,7 +40,19 @@ namespace OOT_BTracker
         public void Unload_All()
         {
             itemt.Original_Size();
-            keysa = null;
+            if (keysa != null)
+            {
+                keysa.KeySanity_Terminate();
+                keysa = null;
+                itemt.Set_KeySanity(keysa);
+            }
+            this.Controls.Clear();
+
+            this.Controls.Add(modus_btn);
+            this.Controls.Add(modus_normal_btn);
+            this.Controls.Add(modus_keysanity_btn);
+            this.Controls.Add(modus_map_btn);
+            itemt.Init_buttons();
         }
 
         private void Menu_Initialize()
@@ -47,6 +60,7 @@ namespace OOT_BTracker
             modus_btn.FlatAppearance.BorderSize = 0;
             modus_normal_btn.FlatAppearance.BorderSize = 0;
             modus_keysanity_btn.FlatAppearance.BorderSize= 0;
+            modus_map_btn.FlatAppearance.BorderSize = 0;
         }
 
         private void modus_btn_MouseLeave(object sender, EventArgs e)
@@ -107,6 +121,7 @@ namespace OOT_BTracker
         {
             modus_normal_btn.Visible = !modus_normal_btn.Visible;
             modus_keysanity_btn.Visible = !modus_keysanity_btn.Visible;
+            modus_map_btn.Visible = !modus_map_btn.Visible;
         }
 
         private void modus_keysanity_btn_Click(object sender, EventArgs e)
@@ -122,10 +137,30 @@ namespace OOT_BTracker
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            if(keysa != null)
+            base.OnPaint(e);
+            if (keysa != null)
             {
                 keysa.DrawLine(e);
             }
+        }
+
+        private void modus_map_btn_Click(object sender, EventArgs e)
+        {
+            if (mapt == null)
+            {
+                mapt = new MapTracker(this);
+            }
+            Modus_Btn_Visible_Hide();
+        }
+
+        private void modus_map_btn_MouseEnter(object sender, EventArgs e)
+        {
+            OnMouseEnter(sender);
+        }
+
+        private void modus_map_btn_MouseLeave(object sender, EventArgs e)
+        {
+            OnMouseLeave(sender);
         }
     }
 }

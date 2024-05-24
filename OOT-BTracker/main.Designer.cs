@@ -37,6 +37,7 @@
             this.modus_btn = new System.Windows.Forms.Button();
             this.modus_normal_btn = new System.Windows.Forms.Button();
             this.modus_keysanity_btn = new System.Windows.Forms.Button();
+            this.modus_map_btn = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -118,12 +119,30 @@
             this.modus_keysanity_btn.MouseEnter += new System.EventHandler(this.modus_keysanity_btn_MouseEnter);
             this.modus_keysanity_btn.MouseLeave += new System.EventHandler(this.modus_keysanity_btn_MouseLeave);
             // 
+            // modus_map_btn
+            // 
+            this.modus_map_btn.BackColor = System.Drawing.Color.Black;
+            this.modus_map_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modus_map_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modus_map_btn.Location = new System.Drawing.Point(1, 92);
+            this.modus_map_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.modus_map_btn.Name = "modus_map_btn";
+            this.modus_map_btn.Size = new System.Drawing.Size(75, 30);
+            this.modus_map_btn.TabIndex = 5;
+            this.modus_map_btn.Text = "Map";
+            this.modus_map_btn.UseVisualStyleBackColor = false;
+            this.modus_map_btn.Visible = false;
+            this.modus_map_btn.Click += new System.EventHandler(this.modus_map_btn_Click);
+            this.modus_map_btn.MouseEnter += new System.EventHandler(this.modus_map_btn_MouseEnter);
+            this.modus_map_btn.MouseLeave += new System.EventHandler(this.modus_map_btn_MouseLeave);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(454, 441);
+            this.Controls.Add(this.modus_map_btn);
             this.Controls.Add(this.modus_keysanity_btn);
             this.Controls.Add(this.modus_normal_btn);
             this.Controls.Add(this.modus_btn);
@@ -149,6 +168,7 @@
         private System.Windows.Forms.Button modus_btn;
         private System.Windows.Forms.Button modus_normal_btn;
         private System.Windows.Forms.Button modus_keysanity_btn;
+        private System.Windows.Forms.Button modus_map_btn;
     }
 }
 
