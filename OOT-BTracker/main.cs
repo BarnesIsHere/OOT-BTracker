@@ -13,11 +13,13 @@ namespace OOT_BTracker
 {
     public partial class main : Form
     {
+        ItemTracker itemt;
         public main()
         {
             InitializeComponent();
             InitButtons();
             InitButtonStates();
+            itemt = new ItemTracker(this);
         }
         int stick_value, nut_value, bombs_value, bow_value, arrow_fire_value, magic_din_value, sword_kokiri_value, sword_master_value, sword_biggoron_value;
 
@@ -32,8 +34,29 @@ namespace OOT_BTracker
             InitStates(sword_kokiri_value = 0, sword_kokiri);
             InitStates(sword_master_value = 0, sword_master);
             InitStates(sword_biggoron_value = 0, sword_biggoron);
+
+            
+
+            /* Initialisiere Slingshotbuttontest */
+            Button ocarina = new Button();
+            ocarina.Image = Properties.Resources.ocarina_saria;
+            ocarina.Image = SetImageOpacity(ocarina.Image, 0.5F);
+            ocarina.Text = "40";
+            ocarina.Size = new Size(40, 40);
+            ocarina.Location = new Point(52, 52);
+            ocarina.FlatStyle = FlatStyle.Flat;
+            ocarina.FlatAppearance.BorderSize = 0;
+            ocarina.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            ocarina.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            ocarina.MouseDown += new MouseEventHandler(this.slingshotbutton);
+            this.Controls.Add(ocarina);
         }
 
+        private void slingshotbutton(object sender, MouseEventArgs e)
+        {
+            Button button = (Button)sender;
+            MessageBox.Show(button.Text);
+        }
         private void InitStates(int value, Button button)
         {
             switch (value)

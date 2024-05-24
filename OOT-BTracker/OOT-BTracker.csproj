@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemTracker.cs" />
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +149,282 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_ice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bombchu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hookshot_long.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hookshot_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic_farore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocarina_saria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocarina_time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield_hylia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield_kokiri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shield_mirror.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slingshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boomerang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boots_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boots_iron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boots_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_poe_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\broken_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\claim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cojiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cucco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\egg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eyedrops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glove_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glove_goron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glove_silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hammer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_container.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_double.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart_piece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice_trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_boss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lens.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic_nayru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic_power_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magic_power_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_bunny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_gerudo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_goron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_keaton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_spooky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_truth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mask_zora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medallion_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medallion_forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medallion_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medallion_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medallion_spirit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medallion_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\membership.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mushroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prescription.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refill_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rupee_silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scale_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scale_silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skulltula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song_epona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song_saria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song_scarecrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song_storm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song_sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song_time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song_zelda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stone_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stone_forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stone_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stoneofagony.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\triforce_piece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tunic_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tunic_forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tunic_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallet_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallet_gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallet_silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallet_tycoon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp_forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp_spirit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp_water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zelda_letter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zora_letter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
