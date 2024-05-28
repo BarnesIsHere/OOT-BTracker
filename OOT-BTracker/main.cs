@@ -28,8 +28,10 @@ namespace OOT_BTracker
             this.MaximumSize = this.Size;
 
 
+            Items oot = new Items();
             // Aktiv für Tests
             //keysa = new KeySanity(this);
+            //MessageBox.Show(oot.output.items[0].name.ToString());
         }
 
         public ItemTracker Instance_ItemTracker()

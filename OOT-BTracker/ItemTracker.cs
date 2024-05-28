@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
+using System.Xml;
 
 namespace OOT_BTracker
 {
@@ -19,6 +20,7 @@ namespace OOT_BTracker
     {
         main parent;
         KeySanity keySanity;
+        
         private List<ArrayList> items;
         private int[] dungeon_state = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         private string[] dungeon_name = { "FREE", "DEKU", "DCVN", "JABU", "FRST", "FIRE", "WATR", "SHDW", "SPRT"};
