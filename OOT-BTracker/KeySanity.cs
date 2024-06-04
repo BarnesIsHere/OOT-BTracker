@@ -17,36 +17,40 @@ namespace OOT_BTracker
     {
         main parent;
         ItemTracker tracker;
-        private List<ArrayList> keys;
+        Items items;
         private static int height = 443;
+        private Dungeons ditems;
+        List<Button> buttons = new List<Button>();
+        private float ausblend = 0.5F, einblend = 2F;
         public KeySanity(main sender)
         {
             parent = sender;
+            items = parent.loaditems;
+            ditems = parent.dungeonitem;
             tracker = parent.Instance_ItemTracker();
             Init_Items();
         }
 
-        private void Init_Items()
+        public void Init_Items()
         {
-            // DrawLine(parent.Height, 0, parent.Height+5, parent.Width);
-            parent.Size = new Size(parent.Width, parent.Height + 130);
-            parent.MinimumSize = new Size(parent.Width, parent.Height + 130);
-            parent.MaximumSize = new Size(parent.Width, parent.Height);
-
-
-            Init_Keys_Dungeons();
+            //Init_Keys_Dungeons();
+            Init_Text_Dungeons();
+            Init_Buttons();
         }
 
         private void Init_Text_Dungeons()
         {
-            for(int i = 0; i < keys.Count; i++)
+            for(int i = 0; i < ditems.output.dungeons.Count(); i++)
             {
-                string dungeonname = keys[i][0].ToString();
-                Color dungeoncolor = (Color)keys[i][1];
+                string dungeonlbl = ditems.output.dungeons[i].shortname;
+                int red = ditems.output.dungeons[i].red;
+                int green = ditems.output.dungeons[i].green;
+                int blue = ditems.output.dungeons[i].blue;
+                Color dungeoncolor = Color.FromArgb(red, green, blue);
 
                 Create_Label(
                     new Point(5 + (i * 45), height + 5),
-                    dungeonname,
+                    dungeonlbl,
                     dungeoncolor
                     );
             }
@@ -61,130 +65,20 @@ namespace OOT_BTracker
 
         }
 
-        private void Init_Keys_Dungeons()
-        {
-            keys = new List<ArrayList>();
-
-            List<string> dungeonname = new List<string>(); // Welcher Dungeon
-            List<Color> dungeoncolor = new List<Color>(); // Welche Farbe zugewiesen der Dungeon
-            List<Boolean> isactive = new List<Boolean>(); // Ob Aktiv (Für Später, da Anfangs TCG immer nicht aktiv
-            List<int> keystatus = new List<int>(); // Wieviele Schlüssel haben wir
-            List<int> keymax = new List<int>(); // Wieviele Schlüssel gibt es
-            List<Boolean> hasbigkey = new List<Boolean>(); // Gibt es hier einen Big Key // Gerudo member Card zählen wir mal auch als einen
-            List<Boolean> bigkeystatus = new List<Boolean>(); // haben wir den Bigkey gefunden
-
-            dungeonname.Add("FoT");
-            dungeoncolor.Add(Color.FromArgb(27, 241, 27));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(6);
-            hasbigkey.Add(true);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("FiT");
-            dungeoncolor.Add(Color.FromArgb(255, 60, 60));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(8);
-            hasbigkey.Add(true);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("WT");
-            dungeoncolor.Add(Color.FromArgb(124, 182, 255));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(6);
-            hasbigkey.Add(true);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("Sht");
-            dungeoncolor.Add(Color.FromArgb(217, 103, 253));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(6);
-            hasbigkey.Add(true);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("Spt");
-            dungeoncolor.Add(Color.FromArgb(255, 205, 113));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(7);
-            hasbigkey.Add(true);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("BotW");
-            dungeoncolor.Add(Color.FromArgb(255, 153, 255));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(3);
-            hasbigkey.Add(false);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("GF");
-            dungeoncolor.Add(Color.FromArgb(255, 180, 116));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(4);
-            hasbigkey.Add(true);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("GTG");
-            dungeoncolor.Add(Color.FromArgb(255, 255, 164));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(9);
-            hasbigkey.Add(false);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("GC");
-            dungeoncolor.Add(Color.FromArgb(150, 150, 150));
-            isactive.Add(true);
-            keystatus.Add(0);
-            keymax.Add(3);
-            hasbigkey.Add(true);
-            bigkeystatus.Add(false);
-
-            dungeonname.Add("TCG");
-            dungeoncolor.Add(Color.FromArgb(255, 80, 166));
-            isactive.Add(false);
-            keystatus.Add(0);
-            keymax.Add(6);
-            hasbigkey.Add(false);
-            bigkeystatus.Add(false);
-
-            for (int i = 0; i < dungeonname.Count; i++)
-            {
-                ArrayList arraylist = new ArrayList();
-                arraylist.Add(dungeonname[i]);
-                arraylist.Add(dungeoncolor[i]);
-                arraylist.Add(isactive[i]);
-                arraylist.Add(keystatus[i]);
-                arraylist.Add(keymax[i]);
-                arraylist.Add(hasbigkey[i]);
-                arraylist.Add(bigkeystatus[i]);
-
-                keys.Add(arraylist);
-            }
-
-            Init_Text_Dungeons();
-            Init_Buttons();
-        }
-
         private void Init_Buttons()
         {
             ResourceManager rm = Resources.ResourceManager;
 
 
 
-            for (int i = 0; i < keys.Count(); i++)
+            for (int i = 0; i < ditems.output.dungeons.Count(); i++)
             {
-                string dungeonname = keys[i][0].ToString();
-                Boolean isactive = (Boolean)keys[i][2];
-                int keystatus = (int)keys[i][3];
-                int keymax = (int)keys[i][4];
-                Boolean hasbigkey = (Boolean)keys[i][5];
-                Boolean bigkeystatus = (Boolean)keys[i][6];
+                string dungeonname = ditems.output.dungeons[i].shortname;
+                Boolean isactive = ditems.output.dungeons[i].acitve;
+                int keystatus = ditems.output.dungeons[i].status;
+                int keymax = ditems.output.dungeons[i].max;
+                Boolean hasbigkey = ditems.output.dungeons[i].bk;
+                Boolean bigkeystatus = ditems.output.dungeons[i].bkstatus;
 
                 if (isactive)
                 {
@@ -192,7 +86,7 @@ namespace OOT_BTracker
                     kbut.Image = (Bitmap)rm.GetObject("key_small");
                     if (dungeonname != "" & keystatus == 0)
                     {
-                        kbut.Image = SetImageOpacity(kbut.Image, 0.2F);
+                        kbut.Image = SetImageOpacity(kbut.Image, ausblend);
                         kbut.ForeColor = Color.DarkGray;
                     }
                     kbut.Tag = i;
@@ -203,11 +97,11 @@ namespace OOT_BTracker
                     kbut.FlatAppearance.MouseOverBackColor = Color.Transparent;
                     kbut.FlatAppearance.MouseDownBackColor = Color.Transparent;
                     kbut.Text = keystatus.ToString() + "/" + keymax.ToString();
-                    kbut.Font = new Font(FontFamily.GenericSansSerif, 8.0F, FontStyle.Regular);
+                    kbut.Font = new Font(parent.pfc.Families[0], 8.0F, FontStyle.Regular);
                     kbut.TextAlign = ContentAlignment.BottomRight;
                     kbut.MouseDown += new MouseEventHandler(kbuttons);
                     parent.Controls.Add(kbut);
-                    keys[i].Add(kbut);
+                    buttons.Add(kbut);
                 }
 
                 if(hasbigkey)
@@ -218,11 +112,11 @@ namespace OOT_BTracker
                     {
                         bbut.Image = (Bitmap)rm.GetObject("membership");
                         bigkeystatus = tracker.Get_GF();
-                        keys[i][6] = bigkeystatus;
+                        ditems.output.dungeons[i].bkstatus = bigkeystatus;
                     }
                     if (dungeonname != "" & !bigkeystatus)
                     {
-                        bbut.Image = SetImageOpacity(bbut.Image, 0.2F);
+                        bbut.Image = SetImageOpacity(bbut.Image, ausblend);
                     }
                         bbut.Tag = i;
                     bbut.Size = new Size(40, 40);
@@ -231,10 +125,10 @@ namespace OOT_BTracker
                     bbut.FlatAppearance.BorderSize = 0;
                     bbut.FlatAppearance.MouseOverBackColor = Color.Transparent;
                     bbut.FlatAppearance.MouseDownBackColor = Color.Transparent;
-                    bbut.Font = new Font(FontFamily.GenericSansSerif, 8.0F, FontStyle.Regular);
+                    bbut.Font = new Font(parent.pfc.Families[0], 8.0F, FontStyle.Regular);
                     bbut.MouseDown += new MouseEventHandler(bbuttons);
                     parent.Controls.Add(bbut);
-                    keys[i].Add(bbut);
+                    buttons.Add(bbut);
                 }
             }
         }
@@ -243,9 +137,9 @@ namespace OOT_BTracker
         {
             Button button = (Button)sender;
             int pos = Convert.ToInt32(button.Tag);
-            string dungeonname = keys[pos][0].ToString();
-            int keystatus = (int)keys[pos][3];
-            int keymax = (int)keys[pos][4];
+            string dungeonname = ditems.output.dungeons[pos].shortname;
+            int keystatus = ditems.output.dungeons[pos].status;
+            int keymax = ditems.output.dungeons[pos].max;
 
             switch (e.Button)
             {
@@ -253,7 +147,7 @@ namespace OOT_BTracker
                     switch (keystatus)
                     {
                         case 0:
-                            button.Image = SetImageOpacity(button.Image, 10F);
+                            button.Image = SetImageOpacity(button.Image, einblend);
                             button.ForeColor = Color.White;
                             keystatus++;
                             button.Text = keystatus.ToString() + "/" + keymax.ToString();
@@ -273,7 +167,7 @@ namespace OOT_BTracker
                         case 0:
                             break;
                         case 1:
-                            button.Image = SetImageOpacity(button.Image, 0.2F);
+                            button.Image = SetImageOpacity(button.Image, ausblend);
                             button.ForeColor = Color.DarkGray;
                             keystatus--;
                             button.Text = keystatus.ToString() + "/" + keymax.ToString();
@@ -286,14 +180,14 @@ namespace OOT_BTracker
                     break;
             }
 
-            keys[pos][3] = keystatus;
+            ditems.output.dungeons[pos].status = keystatus;
         }
         private void bbuttons(object sender, MouseEventArgs e)
         {
             Button button = (Button)sender;
             int pos = Convert.ToInt32(button.Tag);
-            string dungeonname = keys[pos][0].ToString();
-            Boolean bigkeystatus = (Boolean)keys[pos][6];
+            string dungeonname = ditems.output.dungeons[pos].shortname;
+            Boolean bigkeystatus = ditems.output.dungeons[pos].bkstatus;
 
             switch(e.Button)
             {
@@ -301,7 +195,7 @@ namespace OOT_BTracker
                     if(!bigkeystatus)
                     {
                         bigkeystatus = !bigkeystatus;
-                        button.Image = SetImageOpacity(button.Image, 10F);
+                        button.Image = SetImageOpacity(button.Image, einblend);
                         if(dungeonname == "GF")
                         {
                             tracker.Set_GF(bigkeystatus);
@@ -312,7 +206,7 @@ namespace OOT_BTracker
                     if (bigkeystatus)
                     {
                         bigkeystatus = !bigkeystatus;
-                        button.Image = SetImageOpacity(button.Image, 0.2F);
+                        button.Image = SetImageOpacity(button.Image, ausblend);
                         if (dungeonname == "GF")
                         {
                             tracker.Set_GF(bigkeystatus);
@@ -321,14 +215,14 @@ namespace OOT_BTracker
                     break;
             }
 
-            keys[pos][6] = bigkeystatus;
+            ditems.output.dungeons[pos].bkstatus = bigkeystatus;
         }
         private void Create_Label(Point p, string t, Color c)
         {
             Label l = new Label();
             l.Location = p;
             l.Text = t;
-            l.Font = new Font(FontFamily.GenericSansSerif, 9F); ;
+            l.Font = new Font(parent.pfc.Families[0], 8F); ;
             l.ForeColor = c;
             l.Size = new Size(40, 40);
             l.TextAlign = ContentAlignment.MiddleCenter;
@@ -354,22 +248,21 @@ namespace OOT_BTracker
 
         public void Set_GF(Boolean active)
         {
-            for (int i = 0; i < keys.Count; i++)
+            for (int i = 0; i < ditems.output.dungeons.Count(); i++)
             {
-                string dungeonnames = keys[i][0].ToString();
-                Boolean bigkeystatus = (Boolean)keys[i][6];
+                string dungeonnames = ditems.output.dungeons[i].shortname;
+                Boolean bigkeystatus = ditems.output.dungeons[i].bkstatus;
                 if (dungeonnames == "GF")
                 {
-                    Button button = (Button)keys[i][8];
                     if (active)
                     {
-                        keys[i][6] = true;
-                        button.Image = SetImageOpacity(button.Image, 10F);
+                        ditems.output.dungeons[i].bkstatus = true;
+                        buttons[i].Image = SetImageOpacity(buttons[i].Image, einblend);
                     }
                     else
                     {
-                        keys[i][6] = false;
-                        button.Image = SetImageOpacity(button.Image, 0.2F);
+                        ditems.output.dungeons[i].bkstatus = false;
+                        buttons[i].Image = SetImageOpacity(buttons[i].Image, ausblend);
                     }
                 }
             }
@@ -377,7 +270,6 @@ namespace OOT_BTracker
 
         public void KeySanity_Terminate()
         {
-            keys.Clear();
         }
     }
 }

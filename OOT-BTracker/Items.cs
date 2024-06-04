@@ -10,6 +10,8 @@ using System.Net;
 using System.Text.Json;
 using Newtonsoft.Json.Serialization;
 using System.Windows.Forms;
+using System.Resources;
+using OOT_BTracker.Properties;
 
 namespace OOT_BTracker
 {
@@ -46,9 +48,9 @@ namespace OOT_BTracker
 
         public Items()
         {
-            string url = "../../Items.json";
+            string url = "../../Configs/Items.json";
 
-            //output = JsonConvert.DeserializeObject<OOTItems>(File.ReadAllText(url));
-           }
+            output = JsonConvert.DeserializeObject<OOTItems>(File.ReadAllText(url));
+        }
     }
 }

@@ -1,4 +1,12 @@
-﻿{
+﻿/* Welches programm muss durchlaufen werden fürs Tracken // Später auch welches Item muss geladen werden.
+             * 0 = Check/Uncheck Bsp. Mastersword oder Nayru
+             * 1 = Hochzählen runterzählen +1/-1
+             * 2 = Hochzählen runterzählen +10/-10
+             * 3 = Itembild ändern
+             * 4 = Check/Uncheck normal + Strg Links und Rechts Durch Dungeons durchschalten
+             * 5 = Check/Uncheck mit Text Rechts Unten
+             * */
+{
   "items": [
     {
       "name": "Stick",
@@ -247,7 +255,7 @@
       ]
     },
     {
-      "name": "hylia Shield",
+      "name": "Hylia Shield",
       "pos": 16,
       "status": 0,
       "uncheck": true,
@@ -257,7 +265,7 @@
       "max": 1,
       "pictures": [
         {
-          "name": "shield_hyliae"
+          "name": "shield_hylia"
         }
       ]
     },
@@ -378,6 +386,9 @@
       "pictures": [
         {
           "name": "tunic_forest"
+        },
+        {
+          "name": "tunic_forest"
         }
       ]
     },
@@ -486,8 +497,8 @@
       "status": 0,
       "uncheck": true,
       "type": 3,
-      "text": "",
-      "min": 0,
+      "text": "Kid",
+      "min": 1,
       "max": 11,
       "pictures": [
         {
@@ -531,8 +542,8 @@
       "status": 0,
       "uncheck": true,
       "type": 3,
-      "text": "",
-      "min": 0,
+      "text": "Adult",
+      "min": 1,
       "max": 11,
       "pictures": [
         {
@@ -545,8 +556,7 @@
           "name": "cojiro"
         },
         {
-          "name": "mushroom",
-          "
+          "name": "mushroom"
         },
         {
           "name": "medicine"
@@ -581,6 +591,9 @@
       "min": 1,
       "max": 1,
       "pictures": [
+        {
+          "name": "boots_normal"
+        },
         {
           "name": "boots_normal"
         }
@@ -1167,7 +1180,6 @@
           "name": "medallion_light"
         }
       ]
-    }
     }
   ]
 }

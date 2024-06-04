@@ -1,10 +1,14 @@
-﻿using System;
+﻿using OOT_BTracker.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Drawing.Text;
 using System.Linq;
+using System.Resources;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +22,15 @@ namespace OOT_BTracker
         ItemTracker itemt;
         KeySanity keysa;
         MapTracker mapt;
+        public Items loaditems;
+        public Dungeons dungeonitem;
+        //Create your private font collection object.
+        public PrivateFontCollection pfc = new PrivateFontCollection();
         public main()
         {
+            loaditems = new Items();
+            dungeonitem = new Dungeons();
+            Fontfamily_Set();
             InitializeComponent();
             Menu_Initialize();
 
@@ -28,10 +39,36 @@ namespace OOT_BTracker
             this.MaximumSize = this.Size;
 
 
-            Items oot = new Items();
             // Aktiv für Tests
             //keysa = new KeySanity(this);
             //MessageBox.Show(oot.output.items[0].name.ToString());
+        }
+
+        public void Fontfamily_Set()
+        {
+            pfc.AddFontFile("../../Resources/KroneContour.ttf");
+        }
+
+        public void Window_Size(int window)
+        {
+            switch (window)
+            {
+                case 0:
+                    this.Size = new Size(470, 480);
+                    this.MinimumSize = new Size(470, 480);
+                    this.MaximumSize = new Size(470, 480);
+                    break;
+                case 1:
+                    this.Size = new Size(470, 610);
+                    this.MinimumSize = new Size(470, 610);
+                    this.MaximumSize = new Size(470, 610);
+                    break;
+                case 2:
+                    this.Size = new Size(470 + 750, 480 + 400);
+                    this.MinimumSize = new Size(470 + 750, 480 + 400);
+                    this.MaximumSize = new Size(470 + 750, 480 + 400);
+                    break;
+            }
         }
 
         public ItemTracker Instance_ItemTracker()
@@ -39,22 +76,48 @@ namespace OOT_BTracker
             return this.itemt;
         }
 
-        public void Unload_All()
+        public void Unload_All(int unloadelement)
         {
-            itemt.Original_Size();
-            if (keysa != null)
-            {
-                keysa.KeySanity_Terminate();
-                keysa = null;
-                itemt.Set_KeySanity(keysa);
-            }
-            this.Controls.Clear();
 
+            this.Window_Size(unloadelement);
+            this.Controls.Clear();
             this.Controls.Add(modus_btn);
             this.Controls.Add(modus_normal_btn);
             this.Controls.Add(modus_keysanity_btn);
             this.Controls.Add(modus_map_btn);
-            itemt.Init_buttons();
+            switch (unloadelement)
+            {
+                case 0:
+                    if (keysa != null)
+                    {
+                        keysa = null;
+                    }
+                    if (mapt != null)
+                    {
+                        mapt = null;
+                    }
+                    itemt.Init_buttons();
+                    break;
+                case 1:
+                    if (mapt != null)
+                    {
+                        mapt = null;
+                    }
+                    itemt.Init_buttons();
+                    keysa = new KeySanity(this);
+                    keysa.Init_Items();
+                    break;
+                case 2:
+                    itemt.Init_buttons();
+                    if (keysa == null)
+                        keysa = new KeySanity(this);
+                    keysa.Init_Items();
+                    mapt = new MapTracker(this);
+                    break;
+            }
+
+            
+            
         }
 
         private void Menu_Initialize()
@@ -115,7 +178,7 @@ namespace OOT_BTracker
 
         private void modus_normal_btn_Click(object sender, EventArgs e)
         {
-            Unload_All();
+            Unload_All(0);
             Modus_Btn_Visible_Hide();
         }
 
@@ -128,11 +191,7 @@ namespace OOT_BTracker
 
         private void modus_keysanity_btn_Click(object sender, EventArgs e)
         {
-            if (keysa == null)
-            {
-                keysa = new KeySanity(this);
-                itemt.Set_KeySanity(keysa);
-            }
+            Unload_All(1);
             Modus_Btn_Visible_Hide();
         }
 
@@ -148,10 +207,7 @@ namespace OOT_BTracker
 
         private void modus_map_btn_Click(object sender, EventArgs e)
         {
-            if (mapt == null)
-            {
-                mapt = new MapTracker(this);
-            }
+            Unload_All(2);
             Modus_Btn_Visible_Hide();
         }
 

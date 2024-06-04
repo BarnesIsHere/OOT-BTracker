@@ -18,12 +18,9 @@ namespace OOT_BTracker
         {
             double width = 740;
             double height = width * 0.5625;
-
             this.parent = p;
-            parent.Size = new Size(parent.Width + 750, parent.Height + 400);
-            parent.MinimumSize = new Size(parent.Width + 750, parent.Height + 400);
-            parent.MaximumSize = new Size(parent.Width, parent.Height);
 
+            parent.Window_Size(2);
             ResourceManager rm = Resources.ResourceManager;
             PictureBox map = new PictureBox();
             map.Image = (Bitmap)rm.GetObject("hyrule");
