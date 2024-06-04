@@ -20,15 +20,14 @@ namespace OOT_BTracker
         Items items;
         private static int height = 443;
         private Dungeons ditems;
-        List<Button> buttons = new List<Button>();
+        List<Button> kbuttonssave = new List<Button>();
+        List<Button> bbuttonssave = new List<Button>();
         private float ausblend = 0.5F, einblend = 2F;
         public KeySanity(main sender)
         {
             parent = sender;
             items = parent.loaditems;
             ditems = parent.dungeonitem;
-            tracker = parent.Instance_ItemTracker();
-            Init_Items();
         }
 
         public void Init_Items()
@@ -36,6 +35,11 @@ namespace OOT_BTracker
             //Init_Keys_Dungeons();
             Init_Text_Dungeons();
             Init_Buttons();
+        }
+
+        public void Set_ItemTracker(ItemTracker i)
+        {
+            this.tracker = i;
         }
 
         private void Init_Text_Dungeons()
@@ -47,12 +51,14 @@ namespace OOT_BTracker
                 int green = ditems.output.dungeons[i].green;
                 int blue = ditems.output.dungeons[i].blue;
                 Color dungeoncolor = Color.FromArgb(red, green, blue);
-
-                Create_Label(
-                    new Point(5 + (i * 45), height + 5),
-                    dungeonlbl,
-                    dungeoncolor
+                if (ditems.output.dungeons[i].acitve)
+                {
+                    Create_Label(
+                        new Point(5 + (i * 45), height + 5),
+                        dungeonlbl,
+                        dungeoncolor
                     );
+                }
             }
         }
         public void DrawLine(PaintEventArgs e)
@@ -69,7 +75,8 @@ namespace OOT_BTracker
         {
             ResourceManager rm = Resources.ResourceManager;
 
-
+            kbuttonssave = new List<Button>();
+            bbuttonssave = new List<Button>();
 
             for (int i = 0; i < ditems.output.dungeons.Count(); i++)
             {
@@ -101,13 +108,14 @@ namespace OOT_BTracker
                     kbut.TextAlign = ContentAlignment.BottomRight;
                     kbut.MouseDown += new MouseEventHandler(kbuttons);
                     parent.Controls.Add(kbut);
-                    buttons.Add(kbut);
+                    kbuttonssave.Add(kbut);
                 }
 
                 if(hasbigkey)
                 {
                     Button bbut = new Button();
                     bbut.Image = (Bitmap)rm.GetObject("key_boss");
+                    bbut.Tag = i;
                     if (dungeonname == "GF")
                     {
                         bbut.Image = (Bitmap)rm.GetObject("membership");
@@ -118,7 +126,6 @@ namespace OOT_BTracker
                     {
                         bbut.Image = SetImageOpacity(bbut.Image, ausblend);
                     }
-                        bbut.Tag = i;
                     bbut.Size = new Size(40, 40);
                     bbut.Location = new Point(5 + (i * 45), height + 80);
                     bbut.FlatStyle = FlatStyle.Flat;
@@ -128,7 +135,12 @@ namespace OOT_BTracker
                     bbut.Font = new Font(parent.pfc.Families[0], 8.0F, FontStyle.Regular);
                     bbut.MouseDown += new MouseEventHandler(bbuttons);
                     parent.Controls.Add(bbut);
-                    buttons.Add(bbut);
+                    bbuttonssave.Add(bbut);
+                }
+                else
+                {
+                    Button bbut = new Button();
+                    bbuttonssave.Add(bbut);
                 }
             }
         }
@@ -257,12 +269,12 @@ namespace OOT_BTracker
                     if (active)
                     {
                         ditems.output.dungeons[i].bkstatus = true;
-                        buttons[i].Image = SetImageOpacity(buttons[i].Image, einblend);
+                        bbuttonssave[i].Image = SetImageOpacity(bbuttonssave[i].Image, einblend);
                     }
                     else
                     {
                         ditems.output.dungeons[i].bkstatus = false;
-                        buttons[i].Image = SetImageOpacity(buttons[i].Image, ausblend);
+                        bbuttonssave[i].Image = SetImageOpacity(bbuttonssave[i].Image, ausblend);
                     }
                 }
             }

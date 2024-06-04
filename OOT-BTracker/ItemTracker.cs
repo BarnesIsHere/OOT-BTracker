@@ -37,7 +37,6 @@ namespace OOT_BTracker
             parent = sender; 
             load = parent.loaditems;
             family = parent.pfc.Families[0];
-            Init_buttons();
         }
         public void Set_KeySanity(KeySanity k)
         {
@@ -56,7 +55,7 @@ namespace OOT_BTracker
         {
             int zeile = 9;
             int zeilec = 0, spaltec = 0;
-
+            buttons = new List<Button>();
             for(int i = 0; i < load.output.items.Count(); i++)
             {
                 string itemnames = load.output.items[i].name;
@@ -66,7 +65,15 @@ namespace OOT_BTracker
                 string itemtext = load.output.items[i].text;
                 int itemmin = load.output.items[i].min;
                 int itemmax = load.output.items[i].max;
-                string picture = load.output.items[i].pictures[itemstatus].name;
+                string picture = "";
+                if (itemmax == 1)
+                {
+                    picture = load.output.items[i].pictures[0].name;
+                }
+                else
+                {
+                    picture = load.output.items[i].pictures[itemstatus].name;
+                }
 
                 ResourceManager rm = Resources.ResourceManager;
 

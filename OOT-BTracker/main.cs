@@ -19,24 +19,25 @@ namespace OOT_BTracker
 {
     public partial class main : Form
     {
-        ItemTracker itemt;
-        KeySanity keysa;
-        MapTracker mapt;
-        public Items loaditems;
-        public Dungeons dungeonitem;
+        public ItemTracker itemt;
+        public KeySanity keysa;
+        public MapTracker mapt;
+        public Items loaditems = new Items();
+        public Dungeons dungeonitem = new Dungeons();
+        public Areas areas = new Areas();
         //Create your private font collection object.
         public PrivateFontCollection pfc = new PrivateFontCollection();
         public main()
         {
-            loaditems = new Items();
-            dungeonitem = new Dungeons();
             Fontfamily_Set();
             InitializeComponent();
             Menu_Initialize();
 
             this.itemt = new ItemTracker(this);
+            itemt.Init_buttons();
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
+
 
 
             // Aktiv für Tests
@@ -99,23 +100,27 @@ namespace OOT_BTracker
                     itemt.Init_buttons();
                     break;
                 case 1:
+                    keysa = new KeySanity(this);
                     if (mapt != null)
                     {
                         mapt = null;
                     }
+                    itemt.Set_KeySanity(keysa);
                     itemt.Init_buttons();
-                    keysa = new KeySanity(this);
+                    keysa.Set_ItemTracker(itemt);
                     keysa.Init_Items();
                     break;
                 case 2:
-                    itemt.Init_buttons();
                     if (keysa == null)
                         keysa = new KeySanity(this);
-                    keysa.Init_Items();
                     mapt = new MapTracker(this);
+                    itemt.Set_KeySanity(keysa);
+                    itemt.Init_buttons();
+                    keysa.Set_ItemTracker(itemt);
+                    keysa.Init_Items();
+                    mapt.Init_Buttons();
                     break;
             }
-
             
             
         }

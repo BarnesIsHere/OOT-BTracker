@@ -22,6 +22,9 @@ namespace OOT_BTracker
         public int max { get; set; }
         public bool bk { get; set; }
         public bool bkstatus { get; set; }
+        public int posx { get; set; }
+        public int posy { get; set; }
+        public bool showmap {  get; set; }
     }
 
     public class OOTDungeons

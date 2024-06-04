@@ -114,6 +114,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas.cs" />
     <Compile Include="Dungeons.cs" />
     <Compile Include="Items.cs" />
     <Compile Include="ItemTracker.cs" />
@@ -140,6 +141,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Configs\Areas.json" />
     <None Include="Configs\Dungeons.json" />
     <None Include="Configs\Items.json" />
     <None Include="OOT-BTracker_TemporaryKey.pfx" />

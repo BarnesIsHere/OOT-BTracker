@@ -1,0 +1,119 @@
+{
+  "areas": [
+    {
+      "name": "Death Mountain Crater",
+      "posx": 930,
+      "posy": 12
+    },
+    {
+      "name": "Death Mountain",
+      "posx": 920,
+      "posy": 40
+    },
+    {
+      "name": "Goron City",
+      "posx": 895,
+      "posy": 25
+    },
+    {
+      "name": "Ganon's Castle Grounds",
+      "posx": 850,
+      "posy": 55
+    },
+    {
+      "name": "Hyrule Castle Grounds",
+      "posx": 830,
+      "posy": 60
+    },
+    {
+      "name": "Temple of Time",
+      "posx": 860,
+      "posy": 85
+    },
+    {
+      "name": "Castle Town",
+      "posx": 840,
+      "posy": 95
+    },
+    {
+      "name": "Castle Town Entrance",
+      "posx": 840,
+      "posy": 115
+    },
+    {
+      "name": "Hyrule Field",
+      "posx": 850,
+      "posy": 160
+    },
+    {
+      "name": "Lon Lon Ranch",
+      "posx": 800,
+      "posy": 175
+    },
+    {
+      "name": "Lake Hylia",
+      "posx": 730,
+      "posy": 330
+    },
+    {
+      "name": "Gerudo Valley",
+      "posx": 635,
+      "posy": 155
+    },
+    {
+      "name": "Gerudo Fortress",
+      "posx": 590,
+      "posy": 100
+    },
+    {
+      "name": "Haunted Wasteland",
+      "posx": 550,
+      "posy": 100
+    },
+    {
+      "name": "Desert Colossus",
+      "posx": 500,
+      "posy": 100
+    },
+    {
+      "name": "Kakariko Village",
+      "posx": 930,
+      "posy": 100
+    },
+    {
+      "name": "Graveyard",
+      "posx": 990,
+      "posy": 100
+    },
+    {
+      "name": "Zora Fountain",
+      "posx": 1130,
+      "posy": 95
+    },
+    {
+      "name": "Zora's Domain",
+      "posx": 1140,
+      "posy": 125
+    },
+    {
+      "name": "Zora River",
+      "posx": 1020,
+      "posy": 135
+    },
+    {
+      "name": "Sacred Forest Meadow",
+      "posx": 1050,
+      "posy": 190
+    },
+    {
+      "name": "Lost Woods",
+      "posx": 1010,
+      "posy": 210
+    },
+    {
+      "name": "Kokiri Forest",
+      "posx": 1030,
+      "posy": 240
+    }
+  ]
+}

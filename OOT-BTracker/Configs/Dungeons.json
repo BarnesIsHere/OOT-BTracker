@@ -10,7 +10,10 @@
       "status": 0,
       "max": 6,
       "bk": true,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 1030,
+      "posy": 165,
+      "showmap": true
     },
     {
       "name": "Fire Temple",
@@ -22,7 +25,10 @@
       "status": 0,
       "max": 8,
       "bk": true,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 950,
+      "posy": 25,
+      "showmap": true
     },
     {
       "name": "Water Temple",
@@ -34,7 +40,10 @@
       "status": 0,
       "max": 6,
       "bk": true,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 720,
+      "posy": 380,
+      "showmap": true
     },
     {
       "name": "Shadow Temple",
@@ -46,7 +55,10 @@
       "status": 0,
       "max": 6,
       "bk": true,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 1010,
+      "posy": 95,
+      "showmap": true
     },
     {
       "name": "Spirit Temple",
@@ -58,7 +70,10 @@
       "status": 0,
       "max": 7,
       "bk": true,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 470,
+      "posy": 70,
+      "showmap": true
     },
     {
       "name": "Bottom of The Well",
@@ -70,7 +85,10 @@
       "status": 0,
       "max": 3,
       "bk": false,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 950,
+      "posy": 95,
+      "showmap": true
     },
     {
       "name": "Gerudo Fortress",
@@ -82,7 +100,10 @@
       "status": 0,
       "max": 4,
       "bk": true,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 590,
+      "posy": 100,
+      "showmap": false
     },
     {
       "name": "Gerudo Training Ground",
@@ -94,7 +115,10 @@
       "status": 0,
       "max": 9,
       "bk": false,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 590,
+      "posy": 115,
+      "showmap": true
     },
     {
       "name": "Ganons Castle",
@@ -106,7 +130,10 @@
       "status": 0,
       "max": 3,
       "bk": true,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 840,
+      "posy": 40,
+      "showmap": true
     },
     {
       "name": "Treasure Chest game",
@@ -118,7 +145,70 @@
       "status": 0,
       "max": 6,
       "bk": false,
-      "bkstatus": false
+      "bkstatus": false,
+      "posx": 800,
+      "posy": 800,
+      "showmap": false
+    },
+    {
+      "name": "Ice Cavern",
+      "shortname": "IC",
+      "red": 171,
+      "green": 253,
+      "blue": 245,
+      "acitve": false,
+      "status": 0,
+      "max": 6,
+      "bk": false,
+      "bkstatus": false,
+      "posx": 1110,
+      "posy": 85,
+      "showmap": true
+    },
+    {
+      "name": "Deku Tree",
+      "shortname": "DT",
+      "red": 92,
+      "green": 255,
+      "blue": 92,
+      "acitve": false,
+      "status": 0,
+      "max": 6,
+      "bk": false,
+      "bkstatus": false,
+      "posx": 1110,
+      "posy": 230,
+      "showmap": true
+    },
+    {
+      "name": "Jabu Jabu",
+      "shortname": "JB",
+      "red": 139,
+      "green": 228,
+      "blue": 243,
+      "acitve": false,
+      "status": 0,
+      "max": 6,
+      "bk": false,
+      "bkstatus": false,
+      "posx": 1130,
+      "posy": 75,
+      "showmap": true
+    },
+    {
+      "name": "Dodongos Cavern",
+      "shortname": "DC",
+      "red": 255,
+      "green": 106,
+      "blue": 106,
+      "acitve": false,
+      "status": 0,
+      "max": 6,
+      "bk": false,
+      "bkstatus": false,
+      "posx": 890,
+      "posy": 55,
+      "showmap": true
     }
   ]
 }
