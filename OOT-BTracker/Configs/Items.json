@@ -1,0 +1,1185 @@
+﻿/* Welches programm muss durchlaufen werden fürs Tracken // Später auch welches Item muss geladen werden.
+             * 0 = Check/Uncheck Bsp. Mastersword oder Nayru
+             * 1 = Hochzählen runterzählen +1/-1
+             * 2 = Hochzählen runterzählen +10/-10
+             * 3 = Itembild ändern
+             * 4 = Check/Uncheck normal + Strg Links und Rechts Durch Dungeons durchschalten
+             * 5 = Check/Uncheck mit Text Rechts Unten
+             * */
+{
+  "items": [
+    {
+      "name": "Stick",
+      "pos": 0,
+      "status": 0,
+      "uncheck": true,
+      "type": 2,
+      "text": "",
+      "min": 10,
+      "max": 30,
+      "pictures": [
+        {
+          "name": "stick"
+        }
+      ]
+    },
+    {
+      "name": "Nut",
+      "pos": 1,
+      "status": 0,
+      "uncheck": true,
+      "type": 2,
+      "text": "",
+      "min": 20,
+      "max": 40,
+      "pictures": [
+        {
+          "name": "nut"
+        }
+      ]
+    },
+    {
+      "name": "Bombs",
+      "pos": 2,
+      "status": 0,
+      "uncheck": true,
+      "type": 2,
+      "text": "",
+      "min": 20,
+      "max": 40,
+      "pictures": [
+        {
+          "name": "bomb_bag_bombs"
+        }
+      ]
+    },
+    {
+      "name": "Bow",
+      "pos": 3,
+      "status": 0,
+      "uncheck": true,
+      "type": 2,
+      "text": "",
+      "min": 30,
+      "max": 50,
+      "pictures": [
+        {
+          "name": "bow"
+        }
+      ]
+    },
+    {
+      "name": "Fire Arrow",
+      "pos": 4,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Fire",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "arrow_fire"
+        }
+      ]
+    },
+    {
+      "name": "Din Magic",
+      "pos": 5,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Din",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "magic_din"
+        }
+      ]
+    },
+    {
+      "name": "Kokiri Sword",
+      "pos": 6,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "sword_kokiri"
+        }
+      ]
+    },
+    {
+      "name": "Master Sword",
+      "pos": 7,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "sword_master"
+        }
+      ]
+    },
+    {
+      "name": "Biggoron Sword",
+      "pos": 8,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "sword_biggoron"
+        }
+      ]
+    },
+    {
+      "name": "Slingshot",
+      "pos": 9,
+      "status": 0,
+      "uncheck": true,
+      "type": 2,
+      "text": "",
+      "min": 30,
+      "max": 50,
+      "pictures": [
+        {
+          "name": "slingshot"
+        }
+      ]
+    },
+    {
+      "name": "Ocarina",
+      "pos": 10,
+      "status": 0,
+      "uncheck": true,
+      "type": 3,
+      "text": "",
+      "min": 0,
+      "max": 2,
+      "pictures": [
+        {
+          "name": "ocarina_saria"
+        },
+        {
+          "name": "ocarina_time"
+        }
+      ]
+    },
+    {
+      "name": "Bombchu",
+      "pos": 11,
+      "status": 0,
+      "uncheck": true,
+      "type": 3,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "bombchu"
+        }
+      ]
+    },
+    {
+      "name": "Hookshot",
+      "pos": 12,
+      "status": 0,
+      "uncheck": true,
+      "type": 3,
+      "text": "",
+      "min": 0,
+      "max": 2,
+      "pictures": [
+        {
+          "name": "hookshot_small"
+        },
+        {
+          "name": "hookshot_long"
+        }
+      ]
+    },
+    {
+      "name": "Ice Arrows",
+      "pos": 13,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Ice",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "arrow_ice"
+        }
+      ]
+    },
+    {
+      "name": "Farore",
+      "pos": 14,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Far",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "magic_farore"
+        }
+      ]
+    },
+    {
+      "name": "Kokiri Shield",
+      "pos": 15,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "shield_kokiri"
+        }
+      ]
+    },
+    {
+      "name": "Hylia Shield",
+      "pos": 16,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "shield_hylia"
+        }
+      ]
+    },
+    {
+      "name": "Mirror Shield",
+      "pos": 16,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "shield_mirror"
+        }
+      ]
+    },
+    {
+      "name": "Boomerang",
+      "pos": 17,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "boomerang"
+        }
+      ]
+    },
+    {
+      "name": "Lens of Truth",
+      "pos": 18,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "lens"
+        }
+      ]
+    },
+    {
+      "name": "Magic Bean",
+      "pos": 19,
+      "status": 0,
+      "uncheck": true,
+      "type": 1,
+      "text": "",
+      "min": 0,
+      "max": 10,
+      "pictures": [
+        {
+          "name": "bean"
+        }
+      ]
+    },
+    {
+      "name": "Hammer",
+      "pos": 20,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "hammer"
+        }
+      ]
+    },
+    {
+      "name": "Light Arrow",
+      "pos": 21,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Light",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "arrow_light"
+        }
+      ]
+    },
+    {
+      "name": "Nayru",
+      "pos": 22,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Nay",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "magic_nayru"
+        }
+      ]
+    },
+    {
+      "name": "Kid Tunic",
+      "pos": 23,
+      "status": 1,
+      "uncheck": false,
+      "type": 5,
+      "text": "",
+      "min": 1,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "tunic_forest"
+        },
+        {
+          "name": "tunic_forest"
+        }
+      ]
+    },
+    {
+      "name": "Goron Tunic",
+      "pos": 24,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "tunic_fire"
+        }
+      ]
+    },
+    {
+      "name": "Zora Tunic",
+      "pos": 25,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "tunic_water"
+        }
+      ]
+    },
+    {
+      "name": "Wallet",
+      "pos": 26,
+      "status": 1,
+      "uncheck": false,
+      "type": 3,
+      "text": "99",
+      "min": 1,
+      "max": 4,
+      "pictures": [
+        {
+          "name": "wallet_default"
+        },
+        {
+          "name": "wallet_silver"
+        },
+        {
+          "name": "wallet_gold"
+        },
+        {
+          "name": "wallet_tycoon"
+        }
+      ]
+    },
+    {
+      "name": "Skulltula",
+      "pos": 27,
+      "status": 0,
+      "uncheck": true,
+      "type": 1,
+      "text": "",
+      "min": 0,
+      "max": 100,
+      "pictures": [
+        {
+          "name": "skulltula"
+        }
+      ]
+    },
+    {
+      "name": "Bottle",
+      "pos": 28,
+      "status": 0,
+      "uncheck": true,
+      "type": 1,
+      "text": "",
+      "min": 0,
+      "max": 4,
+      "pictures": [
+        {
+          "name": "bottle"
+        }
+      ]
+    },
+    {
+      "name": "Zoras Letter",
+      "pos": 29,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "zora_letter"
+        }
+      ]
+    },
+    {
+      "name": "Kid Chain",
+      "pos": 30,
+      "status": 0,
+      "uncheck": true,
+      "type": 3,
+      "text": "Kid",
+      "min": 1,
+      "max": 11,
+      "pictures": [
+        {
+          "name": "egg"
+        },
+        {
+          "name": "cucco"
+        },
+        {
+          "name": "zelda_letter"
+        },
+        {
+          "name": "mask_keaton"
+        },
+        {
+          "name": "mask_skull"
+        },
+        {
+          "name": "mask_spooky"
+        },
+        {
+          "name": "mask_bunny"
+        },
+        {
+          "name": "mask_truth"
+        },
+        {
+          "name": "mask_goron"
+        },
+        {
+          "name": "mask_zora"
+        },
+        {
+          "name": "mask_gerudo"
+        }
+      ]
+    },
+    {
+      "name": "Adult Chain",
+      "pos": 31,
+      "status": 0,
+      "uncheck": true,
+      "type": 3,
+      "text": "Adult",
+      "min": 1,
+      "max": 11,
+      "pictures": [
+        {
+          "name": "egg"
+        },
+        {
+          "name": "cucco"
+        },
+        {
+          "name": "cojiro"
+        },
+        {
+          "name": "mushroom"
+        },
+        {
+          "name": "medicine"
+        },
+        {
+          "name": "saw"
+        },
+        {
+          "name": "broken_sword"
+        },
+        {
+          "name": "prescription"
+        },
+        {
+          "name": "frog"
+        },
+        {
+          "name": "eyedrops"
+        },
+        {
+          "name": "claim"
+        }
+      ]
+    },
+    {
+      "name": "Boots",
+      "pos": 32,
+      "status": 1,
+      "uncheck": false,
+      "type": 5,
+      "text": "",
+      "min": 1,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "boots_normal"
+        },
+        {
+          "name": "boots_normal"
+        }
+      ]
+    },
+    {
+      "name": "Iron Boots",
+      "pos": 33,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "boots_iron"
+        }
+      ]
+    },
+    {
+      "name": "Hover Boots",
+      "pos": 34,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "boots_hover"
+        }
+      ]
+    },
+    {
+      "name": "Scale",
+      "pos": 35,
+      "status": 0,
+      "uncheck": true,
+      "type": 3,
+      "text": "",
+      "min": 0,
+      "max": 2,
+      "pictures": [
+        {
+          "name": "scale_silver"
+        },
+        {
+          "name": "scale_gold"
+        }
+      ]
+    },
+    {
+      "name": "Magic",
+      "pos": 36,
+      "status": 0,
+      "uncheck": true,
+      "type": 3,
+      "text": "",
+      "min": 0,
+      "max": 2,
+      "pictures": [
+        {
+          "name": "magic_power_small"
+        },
+        {
+          "name": "magic_power_big"
+        }
+      ]
+    },
+    {
+      "name": "Strength",
+      "pos": 37,
+      "status": 0,
+      "uncheck": true,
+      "type": 3,
+      "text": "",
+      "min": 0,
+      "max": 3,
+      "pictures": [
+        {
+          "name": "glove_goron"
+        },
+        {
+          "name": "glove_silver"
+        },
+        {
+          "name": "glove_gold"
+        }
+      ]
+    },
+    {
+      "name": "Membership",
+      "pos": 38,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "membership"
+        }
+      ]
+    },
+    {
+      "name": "Stone of Agony",
+      "pos": 39,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "stoneofagony"
+        }
+      ]
+    },
+    {
+      "name": "Heart Piece",
+      "pos": 40,
+      "status": 0,
+      "uncheck": true,
+      "type": 1,
+      "text": "",
+      "min": 0,
+      "max": 36,
+      "pictures": [
+        {
+          "name": "heart_piece"
+        }
+      ]
+    },
+    {
+      "name": "Heart Container",
+      "pos": 41,
+      "status": 0,
+      "uncheck": true,
+      "type": 1,
+      "text": "",
+      "min": 0,
+      "max": 8,
+      "pictures": [
+        {
+          "name": "heart_container"
+        }
+      ]
+    },
+    {
+      "name": "Double Heart",
+      "pos": 42,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "heart_double"
+        }
+      ]
+    },
+    {
+      "name": "Big Poe",
+      "pos": 43,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "bottle_poe_big"
+        }
+      ]
+    },
+    {
+      "name": "Zeldas Lullaby",
+      "pos": 44,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "song_zelda"
+        }
+      ]
+    },
+    {
+      "name": "Eponas Song",
+      "pos": 45,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "song_epona"
+        }
+      ]
+    },
+    {
+      "name": "Sarias Song",
+      "pos": 46,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "song_saria"
+        }
+      ]
+    },
+    {
+      "name": "Sun Song",
+      "pos": 47,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "song_sun"
+        }
+      ]
+    },
+    {
+      "name": "Song of Time",
+      "pos": 48,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "song_time"
+        }
+      ]
+    },
+    {
+      "name": "Song of Storms",
+      "pos": 49,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "song_storm"
+        }
+      ]
+    },
+    {
+      "name": "Scarecrow Song",
+      "pos": 50,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "song_scarecrow"
+        }
+      ]
+    },
+    {
+      "name": "Leerer Slot",
+      "pos": 51,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "name": "Triforce Piece",
+      "pos": 52,
+      "status": 0,
+      "uncheck": false,
+      "type": 1,
+      "text": "",
+      "min": 0,
+      "max": 100,
+      "pictures": [
+        {
+          "name": "triforce_piece"
+        }
+      ]
+    },
+    {
+      "name": "Minute of the Forest",
+      "pos": 53,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Min",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "warp_forest"
+        }
+      ]
+    },
+    {
+      "name": "Bolero of Fire",
+      "pos": 54,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Min",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "warp_fire"
+        }
+      ]
+    },
+    {
+      "name": "Serenade of Water",
+      "pos": 55,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Min",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "warp_water"
+        }
+      ]
+    },
+    {
+      "name": "Requiem of Spirit",
+      "pos": 56,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Req",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "warp_spirit"
+        }
+      ]
+    },
+    {
+      "name": "Nocturne of Shadow",
+      "pos": 57,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Noc",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "warp_shadow"
+        }
+      ]
+    },
+    {
+      "name": "Prelude of Light",
+      "pos": 58,
+      "status": 0,
+      "uncheck": true,
+      "type": 5,
+      "text": "Pre",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": "warp_light"
+        }
+      ]
+    },
+    {
+      "name": "Leerer Slot",
+      "pos": 59,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "name": "Ice Trap",
+      "pos": 60,
+      "status": 0,
+      "uncheck": false,
+      "type": 1,
+      "text": "",
+      "min": 0,
+      "max": 100,
+      "pictures": [
+        {
+          "name": "ice_trap"
+        }
+      ]
+    },
+    {
+      "name": "Leerer Slot",
+      "pos": 61,
+      "status": 0,
+      "uncheck": true,
+      "type": 0,
+      "text": "",
+      "min": 0,
+      "max": 1,
+      "pictures": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "name": "Forest Stone",
+      "pos": 62,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "stone_forest"
+        }
+      ]
+    },
+    {
+      "name": "Fire Stone",
+      "pos": 63,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "stone_fire"
+        }
+      ]
+    },
+    {
+      "name": "Water Stone",
+      "pos": 64,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "stone_water"
+        }
+      ]
+    },
+    {
+      "name": "Forest Medallion",
+      "pos": 65,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "medallion_forest"
+        }
+      ]
+    },
+    {
+      "name": "Fire Medallion",
+      "pos": 66,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "medallion_fire"
+        }
+      ]
+    },
+    {
+      "name": "Water Medallion",
+      "pos": 67,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "medallion_water"
+        }
+      ]
+    },
+    {
+      "name": "Spirit Medallion",
+      "pos": 68,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "medallion_spirit"
+        }
+      ]
+    },
+    {
+      "name": "Shadow Medallion",
+      "pos": 69,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "medallion_shadow"
+        }
+      ]
+    },
+    {
+      "name": "Light Medallion",
+      "pos": 70,
+      "status": 0,
+      "uncheck": true,
+      "type": 4,
+      "text": "???",
+      "min": 0,
+      "max": 0,
+      "pictures": [
+        {
+          "name": "medallion_light"
+        }
+      ]
+    }
+  ]
+}

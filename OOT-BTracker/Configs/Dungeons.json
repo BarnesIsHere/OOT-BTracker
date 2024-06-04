@@ -1,0 +1,124 @@
+{
+  "dungeons": [
+    {
+      "name": "Forest Temple",
+      "shortname": "FoT",
+      "red": 27,
+      "green": 241,
+      "blue": 27,
+      "acitve": true,
+      "status": 0,
+      "max": 6,
+      "bk": true,
+      "bkstatus": false
+    },
+    {
+      "name": "Fire Temple",
+      "shortname": "FiT",
+      "red": 255,
+      "green": 60,
+      "blue": 60,
+      "acitve": true,
+      "status": 0,
+      "max": 8,
+      "bk": true,
+      "bkstatus": false
+    },
+    {
+      "name": "Water Temple",
+      "shortname": "WT",
+      "red": 124,
+      "green": 182,
+      "blue": 255,
+      "acitve": true,
+      "status": 0,
+      "max": 6,
+      "bk": true,
+      "bkstatus": false
+    },
+    {
+      "name": "Shadow Temple",
+      "shortname": "Sht",
+      "red": 217,
+      "green": 103,
+      "blue": 253,
+      "acitve": true,
+      "status": 0,
+      "max": 6,
+      "bk": true,
+      "bkstatus": false
+    },
+    {
+      "name": "Spirit Temple",
+      "shortname": "Spt",
+      "red": 255,
+      "green": 205,
+      "blue": 113,
+      "acitve": true,
+      "status": 0,
+      "max": 7,
+      "bk": true,
+      "bkstatus": false
+    },
+    {
+      "name": "Bottom of The Well",
+      "shortname": "BotW",
+      "red": 255,
+      "green": 153,
+      "blue": 255,
+      "acitve": true,
+      "status": 0,
+      "max": 3,
+      "bk": false,
+      "bkstatus": false
+    },
+    {
+      "name": "Gerudo Fortress",
+      "shortname": "GF",
+      "red": 255,
+      "green": 180,
+      "blue": 116,
+      "acitve": true,
+      "status": 0,
+      "max": 4,
+      "bk": true,
+      "bkstatus": false
+    },
+    {
+      "name": "Gerudo Training Ground",
+      "shortname": "GTG",
+      "red": 255,
+      "green": 255,
+      "blue": 164,
+      "acitve": true,
+      "status": 0,
+      "max": 9,
+      "bk": false,
+      "bkstatus": false
+    },
+    {
+      "name": "Ganons Castle",
+      "shortname": "GC",
+      "red": 150,
+      "green": 150,
+      "blue": 150,
+      "acitve": true,
+      "status": 0,
+      "max": 3,
+      "bk": true,
+      "bkstatus": false
+    },
+    {
+      "name": "Treasure Chest game",
+      "shortname": "TCG",
+      "red": 255,
+      "green": 80,
+      "blue": 166,
+      "acitve": false,
+      "status": 0,
+      "max": 6,
+      "bk": false,
+      "bkstatus": false
+    }
+  ]
+}
