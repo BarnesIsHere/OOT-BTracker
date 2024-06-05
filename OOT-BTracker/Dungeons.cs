@@ -12,6 +12,7 @@ namespace OOT_BTracker
 {
     public class Dungeon
     {
+        public int id { get; set; }
         public string name { get; set; }
         public string shortname { get; set; }
         public int red { get; set; }

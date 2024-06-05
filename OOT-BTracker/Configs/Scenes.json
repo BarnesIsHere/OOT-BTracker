@@ -1,0 +1,222 @@
+{
+  "Scenes": [
+    {
+      "id": 0,
+      "name": "Deku Tree",
+      "entrances": [
+        {
+          "id": 1,
+          "room": 1,
+          "name": "Kokiri Forest"
+        },
+        {
+          "id": 17,
+          "room": 1,
+          "name": "Gohma's Lair"
+        }
+      ],
+      "room": [
+        {
+          "id": 0,
+          "condition": [
+            {
+              "item": "none"
+            }
+          ],
+          "actors": [
+            {
+              "id": 0,
+              "name": "Skullwalltula",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 1,
+              "name": "Skullwalltula",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 2,
+              "name": "Skullwalltula",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 3,
+              "name": "Big Skulltula",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 4,
+              "name": "Big Skulltula",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 5,
+              "name": "Big Skulltula",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 6,
+              "name": "Regen Grass",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 7,
+              "name": "Regen Grass",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 8,
+              "name": "Regen Grass",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 9,
+              "name": "Regen Grass",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 10,
+              "name": "Regen Grass",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 11,
+              "name": "Deku Baba",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 12,
+              "name": "Deku Baba",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 13,
+              "name": "Deku Baba",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 14,
+              "name": "Map Chest",
+              "active": true,
+              "tracked": false
+            },
+            {
+              "id": 15,
+              "name": "Collectable Heart",
+              "active": false,
+              "tracked": false
+            },
+            {
+              "id": 16,
+              "name": "Collectable Heart",
+              "active": false,
+              "tracked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Kokiri Forest",
+      "entrances": [
+        {
+          "id": 0,
+          "room": 0,
+          "name": "Deku Tree"
+        }
+      ],
+      "room": [
+        {
+          "id": 0,
+          "condition": [
+            {
+              "item": "none"
+            }
+          ],
+          "actors": [
+            {
+              "id": 0,
+              "name": "Skulltula",
+              "active": true,
+              "tracked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Gohma's Lair",
+      "entrances": [
+        {
+          "id": 1,
+          "room": 1,
+          "name": "Kokiri Forest"
+        }
+      ],
+      "room": [
+        {
+          "id": 0,
+          "condition": [
+            {
+              "item": "none"
+            }
+          ],
+          "actors": [
+            {
+              "id": 0,
+              "name": "Skullwalltula",
+              "active": false,
+              "tracked": false
+            }
+          ]
+        }
+      ]
+      // Ab Hier für Template Kopieren
+    },
+    {
+      "id": 101, 
+      "name": "Template", 
+      "entrances": [ 
+        {
+          "id": 102,
+          "room": 0, 
+          "name": "Template World" 
+        }
+      ],
+      "room": [
+        {
+          "id": 0,
+          "condition": [
+            {
+              "item": "none"
+            }
+          ],
+          "actors": [
+            {
+              "id": 0,
+              "name": "Skullwalltula",
+              "active": false,
+              "tracked": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

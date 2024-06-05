@@ -26,6 +26,7 @@ namespace OOT_BTracker
 
     public class Area
     {
+        public int id { get; set; }
         public string name { get; set; }
         public int posx { get; set; }
         public int posy { get; set; }

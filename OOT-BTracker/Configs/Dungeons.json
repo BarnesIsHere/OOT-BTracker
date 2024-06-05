@@ -1,6 +1,7 @@
 {
   "dungeons": [
     {
+      "id":  100,
       "name": "Forest Temple",
       "shortname": "FoT",
       "red": 27,
@@ -16,6 +17,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Fire Temple",
       "shortname": "FiT",
       "red": 255,
@@ -31,6 +33,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Water Temple",
       "shortname": "WT",
       "red": 124,
@@ -46,6 +49,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Shadow Temple",
       "shortname": "Sht",
       "red": 217,
@@ -61,6 +65,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Spirit Temple",
       "shortname": "Spt",
       "red": 255,
@@ -76,6 +81,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Bottom of The Well",
       "shortname": "BotW",
       "red": 255,
@@ -91,6 +97,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Gerudo Fortress",
       "shortname": "GF",
       "red": 255,
@@ -106,6 +113,7 @@
       "showmap": false
     },
     {
+      "id": 100,
       "name": "Gerudo Training Ground",
       "shortname": "GTG",
       "red": 255,
@@ -121,6 +129,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Ganons Castle",
       "shortname": "GC",
       "red": 150,
@@ -136,6 +145,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Treasure Chest game",
       "shortname": "TCG",
       "red": 255,
@@ -151,6 +161,7 @@
       "showmap": false
     },
     {
+      "id": 100,
       "name": "Ice Cavern",
       "shortname": "IC",
       "red": 171,
@@ -166,6 +177,7 @@
       "showmap": true
     },
     {
+      "id": 0,
       "name": "Deku Tree",
       "shortname": "DT",
       "red": 92,
@@ -181,6 +193,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Jabu Jabu",
       "shortname": "JB",
       "red": 139,
@@ -196,6 +209,7 @@
       "showmap": true
     },
     {
+      "id": 100,
       "name": "Dodongos Cavern",
       "shortname": "DC",
       "red": 255,
